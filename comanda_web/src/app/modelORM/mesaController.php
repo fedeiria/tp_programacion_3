@@ -225,7 +225,7 @@ class MesaController
         }
         
         if ($flagDrink == true || $flagKitchen == true || $flagDessert == true)
-            $flag = true;
+            $flagOrder = true;
 
         return $flagOrder;
     }
