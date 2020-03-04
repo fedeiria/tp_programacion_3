@@ -170,9 +170,8 @@ class MesaController
                             $cancelOrder->estado = CANCELADO;
                             $cancelOrder->save();
 
-                            if (!is_null($cancelDrink = Bebida::where('idPedido', '=', $newRequest['idPedido'])->whereIn('idBebida', [BEER_CODE, DRINK_CODE])->update(['estado' => CANCELADO]))) {
-                                ;
-                            }
+                            if (!is_null($cancelDrink = Bebida::where('idPedido', '=', $newRequest['idPedido'])->whereIn('idBebida', [BEER_CODE, DRINK_CODE])->update(['estado' => CANCELADO]))) {;}
+                            
                             if (!is_null($cancelFood = Cocina::find($newRequest['idPedido']))) {
                                 $cancelFood->estadoPedido = CANCELADO;
                                 $cancelFood->save();
